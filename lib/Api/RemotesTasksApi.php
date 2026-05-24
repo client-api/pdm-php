@@ -136,10 +136,10 @@ class RemotesTasksApi
      *
      * Get the list of tasks for all remotes
      *
-     * @param  bool|null $errors Only list erroneous tasks. (optional, default to 0)
+     * @param  bool|null $errors Only list erroneous tasks. (optional, default to false)
      * @param  int|null $limit Only list this amount of tasks. (0 means no limit) (optional, default to 50)
      * @param  string|null $remote Remote ID. (optional)
-     * @param  bool|null $running Only list running tasks. (optional, default to 0)
+     * @param  bool|null $running Only list running tasks. (optional, default to false)
      * @param  int|null $since Only list tasks since this UNIX epoch. (optional)
      * @param  int|null $start List tasks beginning from this offset. (optional, default to 0)
      * @param  \ClientApi\Pdm\Model\PdmStatusfilterEnum[]|null $statusfilter Only list tasks which have any one of the listed status. (optional)
@@ -153,7 +153,7 @@ class RemotesTasksApi
      * @throws \InvalidArgumentException
      * @return \ClientApi\Pdm\Model\RemotesTasksGetListResponse|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError
      */
-    public function remotesTasksGetList($errors = 0, $limit = 50, $remote = null, $running = 0, $since = null, $start = 0, $statusfilter = null, $typefilter = null, $until = null, $userfilter = null, $view = null, string $contentType = self::contentTypes['remotesTasksGetList'][0])
+    public function remotesTasksGetList($errors = false, $limit = 50, $remote = null, $running = false, $since = null, $start = 0, $statusfilter = null, $typefilter = null, $until = null, $userfilter = null, $view = null, string $contentType = self::contentTypes['remotesTasksGetList'][0])
     {
         list($response) = $this->remotesTasksGetListWithHttpInfo($errors, $limit, $remote, $running, $since, $start, $statusfilter, $typefilter, $until, $userfilter, $view, $contentType);
         return $response;
@@ -164,10 +164,10 @@ class RemotesTasksApi
      *
      * Get the list of tasks for all remotes
      *
-     * @param  bool|null $errors Only list erroneous tasks. (optional, default to 0)
+     * @param  bool|null $errors Only list erroneous tasks. (optional, default to false)
      * @param  int|null $limit Only list this amount of tasks. (0 means no limit) (optional, default to 50)
      * @param  string|null $remote Remote ID. (optional)
-     * @param  bool|null $running Only list running tasks. (optional, default to 0)
+     * @param  bool|null $running Only list running tasks. (optional, default to false)
      * @param  int|null $since Only list tasks since this UNIX epoch. (optional)
      * @param  int|null $start List tasks beginning from this offset. (optional, default to 0)
      * @param  \ClientApi\Pdm\Model\PdmStatusfilterEnum[]|null $statusfilter Only list tasks which have any one of the listed status. (optional)
@@ -181,7 +181,7 @@ class RemotesTasksApi
      * @throws \InvalidArgumentException
      * @return array of \ClientApi\Pdm\Model\RemotesTasksGetListResponse|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function remotesTasksGetListWithHttpInfo($errors = 0, $limit = 50, $remote = null, $running = 0, $since = null, $start = 0, $statusfilter = null, $typefilter = null, $until = null, $userfilter = null, $view = null, string $contentType = self::contentTypes['remotesTasksGetList'][0])
+    public function remotesTasksGetListWithHttpInfo($errors = false, $limit = 50, $remote = null, $running = false, $since = null, $start = 0, $statusfilter = null, $typefilter = null, $until = null, $userfilter = null, $view = null, string $contentType = self::contentTypes['remotesTasksGetList'][0])
     {
         $request = $this->remotesTasksGetListRequest($errors, $limit, $remote, $running, $since, $start, $statusfilter, $typefilter, $until, $userfilter, $view, $contentType);
 
@@ -357,10 +357,10 @@ class RemotesTasksApi
      *
      * Get the list of tasks for all remotes
      *
-     * @param  bool|null $errors Only list erroneous tasks. (optional, default to 0)
+     * @param  bool|null $errors Only list erroneous tasks. (optional, default to false)
      * @param  int|null $limit Only list this amount of tasks. (0 means no limit) (optional, default to 50)
      * @param  string|null $remote Remote ID. (optional)
-     * @param  bool|null $running Only list running tasks. (optional, default to 0)
+     * @param  bool|null $running Only list running tasks. (optional, default to false)
      * @param  int|null $since Only list tasks since this UNIX epoch. (optional)
      * @param  int|null $start List tasks beginning from this offset. (optional, default to 0)
      * @param  \ClientApi\Pdm\Model\PdmStatusfilterEnum[]|null $statusfilter Only list tasks which have any one of the listed status. (optional)
@@ -373,7 +373,7 @@ class RemotesTasksApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function remotesTasksGetListAsync($errors = 0, $limit = 50, $remote = null, $running = 0, $since = null, $start = 0, $statusfilter = null, $typefilter = null, $until = null, $userfilter = null, $view = null, string $contentType = self::contentTypes['remotesTasksGetList'][0])
+    public function remotesTasksGetListAsync($errors = false, $limit = 50, $remote = null, $running = false, $since = null, $start = 0, $statusfilter = null, $typefilter = null, $until = null, $userfilter = null, $view = null, string $contentType = self::contentTypes['remotesTasksGetList'][0])
     {
         return $this->remotesTasksGetListAsyncWithHttpInfo($errors, $limit, $remote, $running, $since, $start, $statusfilter, $typefilter, $until, $userfilter, $view, $contentType)
             ->then(
@@ -388,10 +388,10 @@ class RemotesTasksApi
      *
      * Get the list of tasks for all remotes
      *
-     * @param  bool|null $errors Only list erroneous tasks. (optional, default to 0)
+     * @param  bool|null $errors Only list erroneous tasks. (optional, default to false)
      * @param  int|null $limit Only list this amount of tasks. (0 means no limit) (optional, default to 50)
      * @param  string|null $remote Remote ID. (optional)
-     * @param  bool|null $running Only list running tasks. (optional, default to 0)
+     * @param  bool|null $running Only list running tasks. (optional, default to false)
      * @param  int|null $since Only list tasks since this UNIX epoch. (optional)
      * @param  int|null $start List tasks beginning from this offset. (optional, default to 0)
      * @param  \ClientApi\Pdm\Model\PdmStatusfilterEnum[]|null $statusfilter Only list tasks which have any one of the listed status. (optional)
@@ -404,7 +404,7 @@ class RemotesTasksApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function remotesTasksGetListAsyncWithHttpInfo($errors = 0, $limit = 50, $remote = null, $running = 0, $since = null, $start = 0, $statusfilter = null, $typefilter = null, $until = null, $userfilter = null, $view = null, string $contentType = self::contentTypes['remotesTasksGetList'][0])
+    public function remotesTasksGetListAsyncWithHttpInfo($errors = false, $limit = 50, $remote = null, $running = false, $since = null, $start = 0, $statusfilter = null, $typefilter = null, $until = null, $userfilter = null, $view = null, string $contentType = self::contentTypes['remotesTasksGetList'][0])
     {
         $returnType = '\ClientApi\Pdm\Model\RemotesTasksGetListResponse';
         $request = $this->remotesTasksGetListRequest($errors, $limit, $remote, $running, $since, $start, $statusfilter, $typefilter, $until, $userfilter, $view, $contentType);
@@ -448,10 +448,10 @@ class RemotesTasksApi
     /**
      * Create request for operation 'remotesTasksGetList'
      *
-     * @param  bool|null $errors Only list erroneous tasks. (optional, default to 0)
+     * @param  bool|null $errors Only list erroneous tasks. (optional, default to false)
      * @param  int|null $limit Only list this amount of tasks. (0 means no limit) (optional, default to 50)
      * @param  string|null $remote Remote ID. (optional)
-     * @param  bool|null $running Only list running tasks. (optional, default to 0)
+     * @param  bool|null $running Only list running tasks. (optional, default to false)
      * @param  int|null $since Only list tasks since this UNIX epoch. (optional)
      * @param  int|null $start List tasks beginning from this offset. (optional, default to 0)
      * @param  \ClientApi\Pdm\Model\PdmStatusfilterEnum[]|null $statusfilter Only list tasks which have any one of the listed status. (optional)
@@ -464,7 +464,7 @@ class RemotesTasksApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function remotesTasksGetListRequest($errors = 0, $limit = 50, $remote = null, $running = 0, $since = null, $start = 0, $statusfilter = null, $typefilter = null, $until = null, $userfilter = null, $view = null, string $contentType = self::contentTypes['remotesTasksGetList'][0])
+    public function remotesTasksGetListRequest($errors = false, $limit = 50, $remote = null, $running = false, $since = null, $start = 0, $statusfilter = null, $typefilter = null, $until = null, $userfilter = null, $view = null, string $contentType = self::contentTypes['remotesTasksGetList'][0])
     {
 
 
@@ -675,10 +675,10 @@ class RemotesTasksApi
      *
      * Get task statistics for the specified filters
      *
-     * @param  bool|null $errors Only list erroneous tasks. (optional, default to 0)
+     * @param  bool|null $errors Only list erroneous tasks. (optional, default to false)
      * @param  int|null $limit Only list this amount of tasks. (0 means no limit) (optional, default to 50)
      * @param  string|null $remote Remote ID. (optional)
-     * @param  bool|null $running Only list running tasks. (optional, default to 0)
+     * @param  bool|null $running Only list running tasks. (optional, default to false)
      * @param  int|null $since Only list tasks since this UNIX epoch. (optional)
      * @param  int|null $start List tasks beginning from this offset. (optional, default to 0)
      * @param  \ClientApi\Pdm\Model\PdmStatusfilterEnum[]|null $statusfilter Only list tasks which have any one of the listed status. (optional)
@@ -692,7 +692,7 @@ class RemotesTasksApi
      * @throws \InvalidArgumentException
      * @return \ClientApi\Pdm\Model\RemotesTasksGetStatisticsResponse|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError
      */
-    public function remotesTasksGetStatistics($errors = 0, $limit = 50, $remote = null, $running = 0, $since = null, $start = 0, $statusfilter = null, $typefilter = null, $until = null, $userfilter = null, $view = null, string $contentType = self::contentTypes['remotesTasksGetStatistics'][0])
+    public function remotesTasksGetStatistics($errors = false, $limit = 50, $remote = null, $running = false, $since = null, $start = 0, $statusfilter = null, $typefilter = null, $until = null, $userfilter = null, $view = null, string $contentType = self::contentTypes['remotesTasksGetStatistics'][0])
     {
         list($response) = $this->remotesTasksGetStatisticsWithHttpInfo($errors, $limit, $remote, $running, $since, $start, $statusfilter, $typefilter, $until, $userfilter, $view, $contentType);
         return $response;
@@ -703,10 +703,10 @@ class RemotesTasksApi
      *
      * Get task statistics for the specified filters
      *
-     * @param  bool|null $errors Only list erroneous tasks. (optional, default to 0)
+     * @param  bool|null $errors Only list erroneous tasks. (optional, default to false)
      * @param  int|null $limit Only list this amount of tasks. (0 means no limit) (optional, default to 50)
      * @param  string|null $remote Remote ID. (optional)
-     * @param  bool|null $running Only list running tasks. (optional, default to 0)
+     * @param  bool|null $running Only list running tasks. (optional, default to false)
      * @param  int|null $since Only list tasks since this UNIX epoch. (optional)
      * @param  int|null $start List tasks beginning from this offset. (optional, default to 0)
      * @param  \ClientApi\Pdm\Model\PdmStatusfilterEnum[]|null $statusfilter Only list tasks which have any one of the listed status. (optional)
@@ -720,7 +720,7 @@ class RemotesTasksApi
      * @throws \InvalidArgumentException
      * @return array of \ClientApi\Pdm\Model\RemotesTasksGetStatisticsResponse|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function remotesTasksGetStatisticsWithHttpInfo($errors = 0, $limit = 50, $remote = null, $running = 0, $since = null, $start = 0, $statusfilter = null, $typefilter = null, $until = null, $userfilter = null, $view = null, string $contentType = self::contentTypes['remotesTasksGetStatistics'][0])
+    public function remotesTasksGetStatisticsWithHttpInfo($errors = false, $limit = 50, $remote = null, $running = false, $since = null, $start = 0, $statusfilter = null, $typefilter = null, $until = null, $userfilter = null, $view = null, string $contentType = self::contentTypes['remotesTasksGetStatistics'][0])
     {
         $request = $this->remotesTasksGetStatisticsRequest($errors, $limit, $remote, $running, $since, $start, $statusfilter, $typefilter, $until, $userfilter, $view, $contentType);
 
@@ -896,10 +896,10 @@ class RemotesTasksApi
      *
      * Get task statistics for the specified filters
      *
-     * @param  bool|null $errors Only list erroneous tasks. (optional, default to 0)
+     * @param  bool|null $errors Only list erroneous tasks. (optional, default to false)
      * @param  int|null $limit Only list this amount of tasks. (0 means no limit) (optional, default to 50)
      * @param  string|null $remote Remote ID. (optional)
-     * @param  bool|null $running Only list running tasks. (optional, default to 0)
+     * @param  bool|null $running Only list running tasks. (optional, default to false)
      * @param  int|null $since Only list tasks since this UNIX epoch. (optional)
      * @param  int|null $start List tasks beginning from this offset. (optional, default to 0)
      * @param  \ClientApi\Pdm\Model\PdmStatusfilterEnum[]|null $statusfilter Only list tasks which have any one of the listed status. (optional)
@@ -912,7 +912,7 @@ class RemotesTasksApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function remotesTasksGetStatisticsAsync($errors = 0, $limit = 50, $remote = null, $running = 0, $since = null, $start = 0, $statusfilter = null, $typefilter = null, $until = null, $userfilter = null, $view = null, string $contentType = self::contentTypes['remotesTasksGetStatistics'][0])
+    public function remotesTasksGetStatisticsAsync($errors = false, $limit = 50, $remote = null, $running = false, $since = null, $start = 0, $statusfilter = null, $typefilter = null, $until = null, $userfilter = null, $view = null, string $contentType = self::contentTypes['remotesTasksGetStatistics'][0])
     {
         return $this->remotesTasksGetStatisticsAsyncWithHttpInfo($errors, $limit, $remote, $running, $since, $start, $statusfilter, $typefilter, $until, $userfilter, $view, $contentType)
             ->then(
@@ -927,10 +927,10 @@ class RemotesTasksApi
      *
      * Get task statistics for the specified filters
      *
-     * @param  bool|null $errors Only list erroneous tasks. (optional, default to 0)
+     * @param  bool|null $errors Only list erroneous tasks. (optional, default to false)
      * @param  int|null $limit Only list this amount of tasks. (0 means no limit) (optional, default to 50)
      * @param  string|null $remote Remote ID. (optional)
-     * @param  bool|null $running Only list running tasks. (optional, default to 0)
+     * @param  bool|null $running Only list running tasks. (optional, default to false)
      * @param  int|null $since Only list tasks since this UNIX epoch. (optional)
      * @param  int|null $start List tasks beginning from this offset. (optional, default to 0)
      * @param  \ClientApi\Pdm\Model\PdmStatusfilterEnum[]|null $statusfilter Only list tasks which have any one of the listed status. (optional)
@@ -943,7 +943,7 @@ class RemotesTasksApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function remotesTasksGetStatisticsAsyncWithHttpInfo($errors = 0, $limit = 50, $remote = null, $running = 0, $since = null, $start = 0, $statusfilter = null, $typefilter = null, $until = null, $userfilter = null, $view = null, string $contentType = self::contentTypes['remotesTasksGetStatistics'][0])
+    public function remotesTasksGetStatisticsAsyncWithHttpInfo($errors = false, $limit = 50, $remote = null, $running = false, $since = null, $start = 0, $statusfilter = null, $typefilter = null, $until = null, $userfilter = null, $view = null, string $contentType = self::contentTypes['remotesTasksGetStatistics'][0])
     {
         $returnType = '\ClientApi\Pdm\Model\RemotesTasksGetStatisticsResponse';
         $request = $this->remotesTasksGetStatisticsRequest($errors, $limit, $remote, $running, $since, $start, $statusfilter, $typefilter, $until, $userfilter, $view, $contentType);
@@ -987,10 +987,10 @@ class RemotesTasksApi
     /**
      * Create request for operation 'remotesTasksGetStatistics'
      *
-     * @param  bool|null $errors Only list erroneous tasks. (optional, default to 0)
+     * @param  bool|null $errors Only list erroneous tasks. (optional, default to false)
      * @param  int|null $limit Only list this amount of tasks. (0 means no limit) (optional, default to 50)
      * @param  string|null $remote Remote ID. (optional)
-     * @param  bool|null $running Only list running tasks. (optional, default to 0)
+     * @param  bool|null $running Only list running tasks. (optional, default to false)
      * @param  int|null $since Only list tasks since this UNIX epoch. (optional)
      * @param  int|null $start List tasks beginning from this offset. (optional, default to 0)
      * @param  \ClientApi\Pdm\Model\PdmStatusfilterEnum[]|null $statusfilter Only list tasks which have any one of the listed status. (optional)
@@ -1003,7 +1003,7 @@ class RemotesTasksApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function remotesTasksGetStatisticsRequest($errors = 0, $limit = 50, $remote = null, $running = 0, $since = null, $start = 0, $statusfilter = null, $typefilter = null, $until = null, $userfilter = null, $view = null, string $contentType = self::contentTypes['remotesTasksGetStatistics'][0])
+    public function remotesTasksGetStatisticsRequest($errors = false, $limit = 50, $remote = null, $running = false, $since = null, $start = 0, $statusfilter = null, $typefilter = null, $until = null, $userfilter = null, $view = null, string $contentType = self::contentTypes['remotesTasksGetStatistics'][0])
     {
 
 

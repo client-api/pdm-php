@@ -313,7 +313,7 @@ class ConfigAccessUpdateOpenidRequest implements ModelInterface, ArrayAccess, \J
         
         $this->setIfExists('acr_values', $data ?? [], null);
         
-        $this->setIfExists('autocreate', $data ?? [], 0);
+        $this->setIfExists('autocreate', $data ?? [], false);
         
         $this->setIfExists('client_id', $data ?? [], null);
         

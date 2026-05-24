@@ -437,7 +437,7 @@ class PveRemotesGetPveRemotesByRemoteQemuByVmidStatusResponseData implements Mod
     public function __construct(?array $data = null)
     {
         
-        $this->setIfExists('agent', $data ?? [], 0);
+        $this->setIfExists('agent', $data ?? [], false);
         
         $this->setIfExists('clipboard', $data ?? [], null);
         
@@ -487,15 +487,15 @@ class PveRemotesGetPveRemotesByRemoteQemuByVmidStatusResponseData implements Mod
         
         $this->setIfExists('running_qemu', $data ?? [], null);
         
-        $this->setIfExists('serial', $data ?? [], 0);
+        $this->setIfExists('serial', $data ?? [], false);
         
-        $this->setIfExists('spice', $data ?? [], 0);
+        $this->setIfExists('spice', $data ?? [], false);
         
         $this->setIfExists('status', $data ?? [], null);
         
         $this->setIfExists('tags', $data ?? [], null);
         
-        $this->setIfExists('template', $data ?? [], 0);
+        $this->setIfExists('template', $data ?? [], false);
         
         $this->setIfExists('uptime', $data ?? [], null);
         

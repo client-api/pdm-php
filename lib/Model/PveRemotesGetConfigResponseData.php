@@ -5229,7 +5229,7 @@ class PveRemotesGetConfigResponseData implements ModelInterface, ArrayAccess, \J
         
         $this->setIfExists('cmode', $data ?? [], PdmPveRemotesCmodeEnum::TTY);
         
-        $this->setIfExists('console', $data ?? [], 1);
+        $this->setIfExists('console', $data ?? [], true);
         
         $this->setIfExists('cores', $data ?? [], null);
         
@@ -5237,7 +5237,7 @@ class PveRemotesGetConfigResponseData implements ModelInterface, ArrayAccess, \J
         
         $this->setIfExists('cpuunits', $data ?? [], 1024);
         
-        $this->setIfExists('debug', $data ?? [], 0);
+        $this->setIfExists('debug', $data ?? [], false);
         
         $this->setIfExists('description', $data ?? [], null);
         
@@ -6349,11 +6349,11 @@ class PveRemotesGetConfigResponseData implements ModelInterface, ArrayAccess, \J
         
         $this->setIfExists('net9', $data ?? [], null);
         
-        $this->setIfExists('onboot', $data ?? [], 0);
+        $this->setIfExists('onboot', $data ?? [], false);
         
         $this->setIfExists('ostype', $data ?? [], null);
         
-        $this->setIfExists('protection', $data ?? [], 0);
+        $this->setIfExists('protection', $data ?? [], false);
         
         $this->setIfExists('rootfs', $data ?? [], null);
         
@@ -6365,13 +6365,13 @@ class PveRemotesGetConfigResponseData implements ModelInterface, ArrayAccess, \J
         
         $this->setIfExists('tags', $data ?? [], null);
         
-        $this->setIfExists('template', $data ?? [], 0);
+        $this->setIfExists('template', $data ?? [], false);
         
         $this->setIfExists('timezone', $data ?? [], null);
         
         $this->setIfExists('tty', $data ?? [], 2);
         
-        $this->setIfExists('unprivileged', $data ?? [], 0);
+        $this->setIfExists('unprivileged', $data ?? [], false);
         
         $this->setIfExists('unused0', $data ?? [], null);
         

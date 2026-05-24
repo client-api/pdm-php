@@ -278,11 +278,11 @@ class SdnVnetsGetVnetsResponseDataInnerPending implements ModelInterface, ArrayA
         
         $this->setIfExists('alias', $data ?? [], null);
         
-        $this->setIfExists('isolate_ports', $data ?? [], 0);
+        $this->setIfExists('isolate_ports', $data ?? [], false);
         
         $this->setIfExists('tag', $data ?? [], null);
         
-        $this->setIfExists('vlanaware', $data ?? [], 0);
+        $this->setIfExists('vlanaware', $data ?? [], false);
         
         $this->setIfExists('zone', $data ?? [], null);
         

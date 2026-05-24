@@ -423,7 +423,7 @@ class PveRemotesGetLxcResponseDataInner implements ModelInterface, ArrayAccess, 
         
         $this->setIfExists('tags', $data ?? [], null);
         
-        $this->setIfExists('template', $data ?? [], 0);
+        $this->setIfExists('template', $data ?? [], false);
         
         $this->setIfExists('uptime', $data ?? [], null);
         

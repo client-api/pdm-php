@@ -413,11 +413,11 @@ class SdnZonesGetZonesResponseDataInner implements ModelInterface, ArrayAccess, 
     public function __construct(?array $data = null)
     {
         
-        $this->setIfExists('advertise_subnets', $data ?? [], 0);
+        $this->setIfExists('advertise_subnets', $data ?? [], false);
         
         $this->setIfExists('bridge', $data ?? [], null);
         
-        $this->setIfExists('bridge_disable_mac_learning', $data ?? [], 0);
+        $this->setIfExists('bridge_disable_mac_learning', $data ?? [], false);
         
         $this->setIfExists('controller', $data ?? [], null);
         
@@ -425,7 +425,7 @@ class SdnZonesGetZonesResponseDataInner implements ModelInterface, ArrayAccess, 
         
         $this->setIfExists('digest', $data ?? [], null);
         
-        $this->setIfExists('disable_arp_nd_suppression', $data ?? [], 0);
+        $this->setIfExists('disable_arp_nd_suppression', $data ?? [], false);
         
         $this->setIfExists('dns', $data ?? [], null);
         
@@ -433,7 +433,7 @@ class SdnZonesGetZonesResponseDataInner implements ModelInterface, ArrayAccess, 
         
         $this->setIfExists('exitnodes', $data ?? [], null);
         
-        $this->setIfExists('exitnodes_local_routing', $data ?? [], 0);
+        $this->setIfExists('exitnodes_local_routing', $data ?? [], false);
         
         $this->setIfExists('exitnodes_primary', $data ?? [], null);
         

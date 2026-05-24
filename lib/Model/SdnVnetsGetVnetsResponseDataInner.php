@@ -315,7 +315,7 @@ class SdnVnetsGetVnetsResponseDataInner implements ModelInterface, ArrayAccess, 
         
         $this->setIfExists('digest', $data ?? [], null);
         
-        $this->setIfExists('isolate_ports', $data ?? [], 0);
+        $this->setIfExists('isolate_ports', $data ?? [], false);
         
         $this->setIfExists('pending', $data ?? [], null);
         
@@ -327,7 +327,7 @@ class SdnVnetsGetVnetsResponseDataInner implements ModelInterface, ArrayAccess, 
         
         $this->setIfExists('type', $data ?? [], null);
         
-        $this->setIfExists('vlanaware', $data ?? [], 0);
+        $this->setIfExists('vlanaware', $data ?? [], false);
         
         $this->setIfExists('vnet', $data ?? [], null);
         

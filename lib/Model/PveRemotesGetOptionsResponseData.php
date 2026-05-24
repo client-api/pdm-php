@@ -281,7 +281,7 @@ class PveRemotesGetOptionsResponseData implements ModelInterface, ArrayAccess, \
     public function __construct(?array $data = null)
     {
         
-        $this->setIfExists('ebtables', $data ?? [], 1);
+        $this->setIfExists('ebtables', $data ?? [], true);
         
         $this->setIfExists('enable', $data ?? [], 0);
         

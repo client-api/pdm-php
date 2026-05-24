@@ -313,11 +313,11 @@ class PveRemotesCreateRemoteMigrateRequest implements ModelInterface, ArrayAcces
         
         $this->setIfExists('bwlimit', $data ?? [], null);
         
-        $this->setIfExists('delete', $data ?? [], 0);
+        $this->setIfExists('delete', $data ?? [], false);
         
         $this->setIfExists('node', $data ?? [], null);
         
-        $this->setIfExists('online', $data ?? [], 0);
+        $this->setIfExists('online', $data ?? [], false);
         
         $this->setIfExists('restart', $data ?? [], null);
         

@@ -1325,7 +1325,7 @@ class ResourcesApi
      * Returns the subscription status of the remotes
      *
      * @param  int|null $max_age Maximum age (in seconds) of cached remote subscription state. (optional, default to 86400)
-     * @param  bool|null $verbose If true, includes subscription information per node (with enough privileges) (optional, default to 0)
+     * @param  bool|null $verbose If true, includes subscription information per node (with enough privileges) (optional, default to false)
      * @param  string|null $view View name. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['resourcesGetSubscription'] to see the possible values for this operation
      *
@@ -1333,7 +1333,7 @@ class ResourcesApi
      * @throws \InvalidArgumentException
      * @return \ClientApi\Pdm\Model\ResourcesGetSubscriptionResponse|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError
      */
-    public function resourcesGetSubscription($max_age = 86400, $verbose = 0, $view = null, string $contentType = self::contentTypes['resourcesGetSubscription'][0])
+    public function resourcesGetSubscription($max_age = 86400, $verbose = false, $view = null, string $contentType = self::contentTypes['resourcesGetSubscription'][0])
     {
         list($response) = $this->resourcesGetSubscriptionWithHttpInfo($max_age, $verbose, $view, $contentType);
         return $response;
@@ -1345,7 +1345,7 @@ class ResourcesApi
      * Returns the subscription status of the remotes
      *
      * @param  int|null $max_age Maximum age (in seconds) of cached remote subscription state. (optional, default to 86400)
-     * @param  bool|null $verbose If true, includes subscription information per node (with enough privileges) (optional, default to 0)
+     * @param  bool|null $verbose If true, includes subscription information per node (with enough privileges) (optional, default to false)
      * @param  string|null $view View name. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['resourcesGetSubscription'] to see the possible values for this operation
      *
@@ -1353,7 +1353,7 @@ class ResourcesApi
      * @throws \InvalidArgumentException
      * @return array of \ClientApi\Pdm\Model\ResourcesGetSubscriptionResponse|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function resourcesGetSubscriptionWithHttpInfo($max_age = 86400, $verbose = 0, $view = null, string $contentType = self::contentTypes['resourcesGetSubscription'][0])
+    public function resourcesGetSubscriptionWithHttpInfo($max_age = 86400, $verbose = false, $view = null, string $contentType = self::contentTypes['resourcesGetSubscription'][0])
     {
         $request = $this->resourcesGetSubscriptionRequest($max_age, $verbose, $view, $contentType);
 
@@ -1530,14 +1530,14 @@ class ResourcesApi
      * Returns the subscription status of the remotes
      *
      * @param  int|null $max_age Maximum age (in seconds) of cached remote subscription state. (optional, default to 86400)
-     * @param  bool|null $verbose If true, includes subscription information per node (with enough privileges) (optional, default to 0)
+     * @param  bool|null $verbose If true, includes subscription information per node (with enough privileges) (optional, default to false)
      * @param  string|null $view View name. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['resourcesGetSubscription'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function resourcesGetSubscriptionAsync($max_age = 86400, $verbose = 0, $view = null, string $contentType = self::contentTypes['resourcesGetSubscription'][0])
+    public function resourcesGetSubscriptionAsync($max_age = 86400, $verbose = false, $view = null, string $contentType = self::contentTypes['resourcesGetSubscription'][0])
     {
         return $this->resourcesGetSubscriptionAsyncWithHttpInfo($max_age, $verbose, $view, $contentType)
             ->then(
@@ -1553,14 +1553,14 @@ class ResourcesApi
      * Returns the subscription status of the remotes
      *
      * @param  int|null $max_age Maximum age (in seconds) of cached remote subscription state. (optional, default to 86400)
-     * @param  bool|null $verbose If true, includes subscription information per node (with enough privileges) (optional, default to 0)
+     * @param  bool|null $verbose If true, includes subscription information per node (with enough privileges) (optional, default to false)
      * @param  string|null $view View name. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['resourcesGetSubscription'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function resourcesGetSubscriptionAsyncWithHttpInfo($max_age = 86400, $verbose = 0, $view = null, string $contentType = self::contentTypes['resourcesGetSubscription'][0])
+    public function resourcesGetSubscriptionAsyncWithHttpInfo($max_age = 86400, $verbose = false, $view = null, string $contentType = self::contentTypes['resourcesGetSubscription'][0])
     {
         $returnType = '\ClientApi\Pdm\Model\ResourcesGetSubscriptionResponse';
         $request = $this->resourcesGetSubscriptionRequest($max_age, $verbose, $view, $contentType);
@@ -1605,14 +1605,14 @@ class ResourcesApi
      * Create request for operation 'resourcesGetSubscription'
      *
      * @param  int|null $max_age Maximum age (in seconds) of cached remote subscription state. (optional, default to 86400)
-     * @param  bool|null $verbose If true, includes subscription information per node (with enough privileges) (optional, default to 0)
+     * @param  bool|null $verbose If true, includes subscription information per node (with enough privileges) (optional, default to false)
      * @param  string|null $view View name. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['resourcesGetSubscription'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function resourcesGetSubscriptionRequest($max_age = 86400, $verbose = 0, $view = null, string $contentType = self::contentTypes['resourcesGetSubscription'][0])
+    public function resourcesGetSubscriptionRequest($max_age = 86400, $verbose = false, $view = null, string $contentType = self::contentTypes['resourcesGetSubscription'][0])
     {
 
         if ($max_age !== null && $max_age < 0) {

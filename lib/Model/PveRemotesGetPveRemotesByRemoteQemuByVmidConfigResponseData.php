@@ -3293,13 +3293,13 @@ class PveRemotesGetPveRemotesByRemoteQemuByVmidConfigResponseData implements Mod
     public function __construct(?array $data = null)
     {
         
-        $this->setIfExists('acpi', $data ?? [], 1);
+        $this->setIfExists('acpi', $data ?? [], true);
         
         $this->setIfExists('affinity', $data ?? [], null);
         
         $this->setIfExists('agent', $data ?? [], null);
         
-        $this->setIfExists('allow_ksm', $data ?? [], 1);
+        $this->setIfExists('allow_ksm', $data ?? [], true);
         
         $this->setIfExists('amd_sev', $data ?? [], null);
         
@@ -3309,7 +3309,7 @@ class PveRemotesGetPveRemotesByRemoteQemuByVmidConfigResponseData implements Mod
         
         $this->setIfExists('audio0', $data ?? [], null);
         
-        $this->setIfExists('autostart', $data ?? [], 0);
+        $this->setIfExists('autostart', $data ?? [], false);
         
         $this->setIfExists('balloon', $data ?? [], null);
         
@@ -3327,7 +3327,7 @@ class PveRemotesGetPveRemotesByRemoteQemuByVmidConfigResponseData implements Mod
         
         $this->setIfExists('citype', $data ?? [], null);
         
-        $this->setIfExists('ciupgrade', $data ?? [], 1);
+        $this->setIfExists('ciupgrade', $data ?? [], true);
         
         $this->setIfExists('ciuser', $data ?? [], null);
         
@@ -3345,7 +3345,7 @@ class PveRemotesGetPveRemotesByRemoteQemuByVmidConfigResponseData implements Mod
         
         $this->setIfExists('efidisk0', $data ?? [], null);
         
-        $this->setIfExists('freeze', $data ?? [], 0);
+        $this->setIfExists('freeze', $data ?? [], false);
         
         $this->setIfExists('hookscript', $data ?? [], null);
         
@@ -3461,13 +3461,13 @@ class PveRemotesGetPveRemotesByRemoteQemuByVmidConfigResponseData implements Mod
         
         $this->setIfExists('ivshmem', $data ?? [], null);
         
-        $this->setIfExists('keephugepages', $data ?? [], 0);
+        $this->setIfExists('keephugepages', $data ?? [], false);
         
         $this->setIfExists('keyboard', $data ?? [], null);
         
-        $this->setIfExists('kvm', $data ?? [], 1);
+        $this->setIfExists('kvm', $data ?? [], true);
         
-        $this->setIfExists('localtime', $data ?? [], 0);
+        $this->setIfExists('localtime', $data ?? [], false);
         
         $this->setIfExists('lock', $data ?? [], null);
         
@@ -3549,7 +3549,7 @@ class PveRemotesGetPveRemotesByRemoteQemuByVmidConfigResponseData implements Mod
         
         $this->setIfExists('net9', $data ?? [], null);
         
-        $this->setIfExists('numa', $data ?? [], 0);
+        $this->setIfExists('numa', $data ?? [], false);
         
         $this->setIfExists('numa_array0', $data ?? [], null);
         
@@ -3567,7 +3567,7 @@ class PveRemotesGetPveRemotesByRemoteQemuByVmidConfigResponseData implements Mod
         
         $this->setIfExists('numa_array7', $data ?? [], null);
         
-        $this->setIfExists('onboot', $data ?? [], 0);
+        $this->setIfExists('onboot', $data ?? [], false);
         
         $this->setIfExists('ostype', $data ?? [], PdmPveRemotesOstypeEnum2::OTHER);
         
@@ -3579,9 +3579,9 @@ class PveRemotesGetPveRemotesByRemoteQemuByVmidConfigResponseData implements Mod
         
         $this->setIfExists('parent', $data ?? [], null);
         
-        $this->setIfExists('protection', $data ?? [], 0);
+        $this->setIfExists('protection', $data ?? [], false);
         
-        $this->setIfExists('reboot', $data ?? [], 1);
+        $this->setIfExists('reboot', $data ?? [], true);
         
         $this->setIfExists('rng0', $data ?? [], null);
         
@@ -3695,13 +3695,13 @@ class PveRemotesGetPveRemotesByRemoteQemuByVmidConfigResponseData implements Mod
         
         $this->setIfExists('startup', $data ?? [], null);
         
-        $this->setIfExists('tablet', $data ?? [], 1);
+        $this->setIfExists('tablet', $data ?? [], true);
         
         $this->setIfExists('tags', $data ?? [], null);
         
-        $this->setIfExists('tdf', $data ?? [], 0);
+        $this->setIfExists('tdf', $data ?? [], false);
         
-        $this->setIfExists('template', $data ?? [], 0);
+        $this->setIfExists('template', $data ?? [], false);
         
         $this->setIfExists('tpmstate0', $data ?? [], null);
         

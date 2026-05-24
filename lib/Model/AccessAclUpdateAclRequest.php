@@ -289,7 +289,7 @@ class AccessAclUpdateAclRequest implements ModelInterface, ArrayAccess, \JsonSer
         
         $this->setIfExists('auth_id', $data ?? [], null);
         
-        $this->setIfExists('delete', $data ?? [], 0);
+        $this->setIfExists('delete', $data ?? [], false);
         
         $this->setIfExists('digest', $data ?? [], null);
         
@@ -297,7 +297,7 @@ class AccessAclUpdateAclRequest implements ModelInterface, ArrayAccess, \JsonSer
         
         $this->setIfExists('path', $data ?? [], null);
         
-        $this->setIfExists('propagate', $data ?? [], 1);
+        $this->setIfExists('propagate', $data ?? [], true);
         
         $this->setIfExists('role', $data ?? [], null);
         

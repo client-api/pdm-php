@@ -293,15 +293,15 @@ class PveRemotesGetPveRemotesByRemoteNodesByNodeStorageByStorageStatusResponseDa
     public function __construct(?array $data = null)
     {
         
-        $this->setIfExists('active', $data ?? [], 0);
+        $this->setIfExists('active', $data ?? [], false);
         
         $this->setIfExists('avail', $data ?? [], null);
         
         $this->setIfExists('content', $data ?? [], null);
         
-        $this->setIfExists('enabled', $data ?? [], 0);
+        $this->setIfExists('enabled', $data ?? [], false);
         
-        $this->setIfExists('shared', $data ?? [], 0);
+        $this->setIfExists('shared', $data ?? [], false);
         
         $this->setIfExists('total', $data ?? [], null);
         

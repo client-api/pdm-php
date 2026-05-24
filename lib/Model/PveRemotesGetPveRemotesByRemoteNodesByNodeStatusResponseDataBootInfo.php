@@ -260,7 +260,7 @@ class PveRemotesGetPveRemotesByRemoteNodesByNodeStatusResponseDataBootInfo imple
         
         $this->setIfExists('mode', $data ?? [], null);
         
-        $this->setIfExists('secureboot', $data ?? [], 0);
+        $this->setIfExists('secureboot', $data ?? [], false);
         
 
     }

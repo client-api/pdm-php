@@ -8341,7 +8341,7 @@ class PveRemotesApi
      *
      * @param  string $remote Remote ID. (required)
      * @param  string $upid A remote UPID (required)
-     * @param  bool|null $download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to 0)
+     * @param  bool|null $download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to false)
      * @param  int|null $limit The amount of lines to read from the tasklog. Setting this parameter to 0 will return all lines until the end of the file. (optional, default to 50)
      * @param  int|null $start Start at this line when reading the tasklog (optional, default to 0)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pveRemotesGetLog'] to see the possible values for this operation
@@ -8350,7 +8350,7 @@ class PveRemotesApi
      * @throws \InvalidArgumentException
      * @return \ClientApi\Pdm\Model\PveRemotesGetLogResponse|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError
      */
-    public function pveRemotesGetLog($remote, $upid, $download = 0, $limit = 50, $start = 0, string $contentType = self::contentTypes['pveRemotesGetLog'][0])
+    public function pveRemotesGetLog($remote, $upid, $download = false, $limit = 50, $start = 0, string $contentType = self::contentTypes['pveRemotesGetLog'][0])
     {
         list($response) = $this->pveRemotesGetLogWithHttpInfo($remote, $upid, $download, $limit, $start, $contentType);
         return $response;
@@ -8363,7 +8363,7 @@ class PveRemotesApi
      *
      * @param  string $remote Remote ID. (required)
      * @param  string $upid A remote UPID (required)
-     * @param  bool|null $download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to 0)
+     * @param  bool|null $download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to false)
      * @param  int|null $limit The amount of lines to read from the tasklog. Setting this parameter to 0 will return all lines until the end of the file. (optional, default to 50)
      * @param  int|null $start Start at this line when reading the tasklog (optional, default to 0)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pveRemotesGetLog'] to see the possible values for this operation
@@ -8372,7 +8372,7 @@ class PveRemotesApi
      * @throws \InvalidArgumentException
      * @return array of \ClientApi\Pdm\Model\PveRemotesGetLogResponse|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function pveRemotesGetLogWithHttpInfo($remote, $upid, $download = 0, $limit = 50, $start = 0, string $contentType = self::contentTypes['pveRemotesGetLog'][0])
+    public function pveRemotesGetLogWithHttpInfo($remote, $upid, $download = false, $limit = 50, $start = 0, string $contentType = self::contentTypes['pveRemotesGetLog'][0])
     {
         $request = $this->pveRemotesGetLogRequest($remote, $upid, $download, $limit, $start, $contentType);
 
@@ -8550,7 +8550,7 @@ class PveRemotesApi
      *
      * @param  string $remote Remote ID. (required)
      * @param  string $upid A remote UPID (required)
-     * @param  bool|null $download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to 0)
+     * @param  bool|null $download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to false)
      * @param  int|null $limit The amount of lines to read from the tasklog. Setting this parameter to 0 will return all lines until the end of the file. (optional, default to 50)
      * @param  int|null $start Start at this line when reading the tasklog (optional, default to 0)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pveRemotesGetLog'] to see the possible values for this operation
@@ -8558,7 +8558,7 @@ class PveRemotesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function pveRemotesGetLogAsync($remote, $upid, $download = 0, $limit = 50, $start = 0, string $contentType = self::contentTypes['pveRemotesGetLog'][0])
+    public function pveRemotesGetLogAsync($remote, $upid, $download = false, $limit = 50, $start = 0, string $contentType = self::contentTypes['pveRemotesGetLog'][0])
     {
         return $this->pveRemotesGetLogAsyncWithHttpInfo($remote, $upid, $download, $limit, $start, $contentType)
             ->then(
@@ -8575,7 +8575,7 @@ class PveRemotesApi
      *
      * @param  string $remote Remote ID. (required)
      * @param  string $upid A remote UPID (required)
-     * @param  bool|null $download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to 0)
+     * @param  bool|null $download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to false)
      * @param  int|null $limit The amount of lines to read from the tasklog. Setting this parameter to 0 will return all lines until the end of the file. (optional, default to 50)
      * @param  int|null $start Start at this line when reading the tasklog (optional, default to 0)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pveRemotesGetLog'] to see the possible values for this operation
@@ -8583,7 +8583,7 @@ class PveRemotesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function pveRemotesGetLogAsyncWithHttpInfo($remote, $upid, $download = 0, $limit = 50, $start = 0, string $contentType = self::contentTypes['pveRemotesGetLog'][0])
+    public function pveRemotesGetLogAsyncWithHttpInfo($remote, $upid, $download = false, $limit = 50, $start = 0, string $contentType = self::contentTypes['pveRemotesGetLog'][0])
     {
         $returnType = '\ClientApi\Pdm\Model\PveRemotesGetLogResponse';
         $request = $this->pveRemotesGetLogRequest($remote, $upid, $download, $limit, $start, $contentType);
@@ -8629,7 +8629,7 @@ class PveRemotesApi
      *
      * @param  string $remote Remote ID. (required)
      * @param  string $upid A remote UPID (required)
-     * @param  bool|null $download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to 0)
+     * @param  bool|null $download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to false)
      * @param  int|null $limit The amount of lines to read from the tasklog. Setting this parameter to 0 will return all lines until the end of the file. (optional, default to 50)
      * @param  int|null $start Start at this line when reading the tasklog (optional, default to 0)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pveRemotesGetLog'] to see the possible values for this operation
@@ -8637,7 +8637,7 @@ class PveRemotesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function pveRemotesGetLogRequest($remote, $upid, $download = 0, $limit = 50, $start = 0, string $contentType = self::contentTypes['pveRemotesGetLog'][0])
+    public function pveRemotesGetLogRequest($remote, $upid, $download = false, $limit = 50, $start = 0, string $contentType = self::contentTypes['pveRemotesGetLog'][0])
     {
 
         // verify the required parameter 'remote' is set
@@ -22931,14 +22931,14 @@ class PveRemotesApi
      *
      * @param  string $remote Remote ID. (required)
      * @param  string $upid A remote UPID (required)
-     * @param  bool|null $wait wait for the task to finish before returning its result (optional, default to 0)
+     * @param  bool|null $wait wait for the task to finish before returning its result (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pveRemotesGetPveRemotesByRemoteTasksByUpidStatus'] to see the possible values for this operation
      *
      * @throws \ClientApi\Pdm\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \ClientApi\Pdm\Model\PveRemotesGetPveRemotesByRemoteTasksByUpidStatusResponse|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError
      */
-    public function pveRemotesGetPveRemotesByRemoteTasksByUpidStatus($remote, $upid, $wait = 0, string $contentType = self::contentTypes['pveRemotesGetPveRemotesByRemoteTasksByUpidStatus'][0])
+    public function pveRemotesGetPveRemotesByRemoteTasksByUpidStatus($remote, $upid, $wait = false, string $contentType = self::contentTypes['pveRemotesGetPveRemotesByRemoteTasksByUpidStatus'][0])
     {
         list($response) = $this->pveRemotesGetPveRemotesByRemoteTasksByUpidStatusWithHttpInfo($remote, $upid, $wait, $contentType);
         return $response;
@@ -22951,14 +22951,14 @@ class PveRemotesApi
      *
      * @param  string $remote Remote ID. (required)
      * @param  string $upid A remote UPID (required)
-     * @param  bool|null $wait wait for the task to finish before returning its result (optional, default to 0)
+     * @param  bool|null $wait wait for the task to finish before returning its result (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pveRemotesGetPveRemotesByRemoteTasksByUpidStatus'] to see the possible values for this operation
      *
      * @throws \ClientApi\Pdm\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \ClientApi\Pdm\Model\PveRemotesGetPveRemotesByRemoteTasksByUpidStatusResponse|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function pveRemotesGetPveRemotesByRemoteTasksByUpidStatusWithHttpInfo($remote, $upid, $wait = 0, string $contentType = self::contentTypes['pveRemotesGetPveRemotesByRemoteTasksByUpidStatus'][0])
+    public function pveRemotesGetPveRemotesByRemoteTasksByUpidStatusWithHttpInfo($remote, $upid, $wait = false, string $contentType = self::contentTypes['pveRemotesGetPveRemotesByRemoteTasksByUpidStatus'][0])
     {
         $request = $this->pveRemotesGetPveRemotesByRemoteTasksByUpidStatusRequest($remote, $upid, $wait, $contentType);
 
@@ -23136,13 +23136,13 @@ class PveRemotesApi
      *
      * @param  string $remote Remote ID. (required)
      * @param  string $upid A remote UPID (required)
-     * @param  bool|null $wait wait for the task to finish before returning its result (optional, default to 0)
+     * @param  bool|null $wait wait for the task to finish before returning its result (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pveRemotesGetPveRemotesByRemoteTasksByUpidStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function pveRemotesGetPveRemotesByRemoteTasksByUpidStatusAsync($remote, $upid, $wait = 0, string $contentType = self::contentTypes['pveRemotesGetPveRemotesByRemoteTasksByUpidStatus'][0])
+    public function pveRemotesGetPveRemotesByRemoteTasksByUpidStatusAsync($remote, $upid, $wait = false, string $contentType = self::contentTypes['pveRemotesGetPveRemotesByRemoteTasksByUpidStatus'][0])
     {
         return $this->pveRemotesGetPveRemotesByRemoteTasksByUpidStatusAsyncWithHttpInfo($remote, $upid, $wait, $contentType)
             ->then(
@@ -23159,13 +23159,13 @@ class PveRemotesApi
      *
      * @param  string $remote Remote ID. (required)
      * @param  string $upid A remote UPID (required)
-     * @param  bool|null $wait wait for the task to finish before returning its result (optional, default to 0)
+     * @param  bool|null $wait wait for the task to finish before returning its result (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pveRemotesGetPveRemotesByRemoteTasksByUpidStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function pveRemotesGetPveRemotesByRemoteTasksByUpidStatusAsyncWithHttpInfo($remote, $upid, $wait = 0, string $contentType = self::contentTypes['pveRemotesGetPveRemotesByRemoteTasksByUpidStatus'][0])
+    public function pveRemotesGetPveRemotesByRemoteTasksByUpidStatusAsyncWithHttpInfo($remote, $upid, $wait = false, string $contentType = self::contentTypes['pveRemotesGetPveRemotesByRemoteTasksByUpidStatus'][0])
     {
         $returnType = '\ClientApi\Pdm\Model\PveRemotesGetPveRemotesByRemoteTasksByUpidStatusResponse';
         $request = $this->pveRemotesGetPveRemotesByRemoteTasksByUpidStatusRequest($remote, $upid, $wait, $contentType);
@@ -23211,13 +23211,13 @@ class PveRemotesApi
      *
      * @param  string $remote Remote ID. (required)
      * @param  string $upid A remote UPID (required)
-     * @param  bool|null $wait wait for the task to finish before returning its result (optional, default to 0)
+     * @param  bool|null $wait wait for the task to finish before returning its result (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pveRemotesGetPveRemotesByRemoteTasksByUpidStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function pveRemotesGetPveRemotesByRemoteTasksByUpidStatusRequest($remote, $upid, $wait = 0, string $contentType = self::contentTypes['pveRemotesGetPveRemotesByRemoteTasksByUpidStatus'][0])
+    public function pveRemotesGetPveRemotesByRemoteTasksByUpidStatusRequest($remote, $upid, $wait = false, string $contentType = self::contentTypes['pveRemotesGetPveRemotesByRemoteTasksByUpidStatus'][0])
     {
 
         // verify the required parameter 'remote' is set

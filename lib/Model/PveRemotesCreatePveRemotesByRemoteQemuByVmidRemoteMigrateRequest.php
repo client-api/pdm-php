@@ -301,11 +301,11 @@ class PveRemotesCreatePveRemotesByRemoteQemuByVmidRemoteMigrateRequest implement
         
         $this->setIfExists('bwlimit', $data ?? [], null);
         
-        $this->setIfExists('delete', $data ?? [], 0);
+        $this->setIfExists('delete', $data ?? [], false);
         
         $this->setIfExists('node', $data ?? [], null);
         
-        $this->setIfExists('online', $data ?? [], 0);
+        $this->setIfExists('online', $data ?? [], false);
         
         $this->setIfExists('target', $data ?? [], null);
         

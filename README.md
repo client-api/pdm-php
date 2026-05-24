@@ -27,7 +27,7 @@ use ClientApi\Pdm\Pve;
 
 $cfg = Configuration::getDefaultConfiguration()
     ->setHost('https://pdm1.example.com:8443/api2/json')
-    ->setApiKey('Authorization', 'PDMAPIToken=user@realm!tokenid=uuid-secret');
+    ->setApiKey('Authorization', 'PDMAPIToken=user@realm!tokenid:uuid-secret');
 
 $pve = new Pdm($cfg);
 

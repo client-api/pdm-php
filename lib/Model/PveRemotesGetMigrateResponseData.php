@@ -303,7 +303,7 @@ class PveRemotesGetMigrateResponseData implements ModelInterface, ArrayAccess, \
         
         $this->setIfExists('dependent_ha_resources', $data ?? [], null);
         
-        $this->setIfExists('has_dbus_vmstate', $data ?? [], 0);
+        $this->setIfExists('has_dbus_vmstate', $data ?? [], false);
         
         $this->setIfExists('local_disks', $data ?? [], null);
         
@@ -315,7 +315,7 @@ class PveRemotesGetMigrateResponseData implements ModelInterface, ArrayAccess, \
         
         $this->setIfExists('not_allowed_nodes', $data ?? [], null);
         
-        $this->setIfExists('running', $data ?? [], 0);
+        $this->setIfExists('running', $data ?? [], false);
         
 
     }

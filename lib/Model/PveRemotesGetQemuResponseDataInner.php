@@ -457,13 +457,13 @@ class PveRemotesGetQemuResponseDataInner implements ModelInterface, ArrayAccess,
         
         $this->setIfExists('running_qemu', $data ?? [], null);
         
-        $this->setIfExists('serial', $data ?? [], 0);
+        $this->setIfExists('serial', $data ?? [], false);
         
         $this->setIfExists('status', $data ?? [], null);
         
         $this->setIfExists('tags', $data ?? [], null);
         
-        $this->setIfExists('template', $data ?? [], 0);
+        $this->setIfExists('template', $data ?? [], false);
         
         $this->setIfExists('uptime', $data ?? [], null);
         

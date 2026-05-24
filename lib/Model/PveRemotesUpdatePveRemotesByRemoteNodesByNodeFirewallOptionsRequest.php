@@ -375,7 +375,7 @@ class PveRemotesUpdatePveRemotesByRemoteNodesByNodeFirewallOptionsRequest implem
         
         $this->setIfExists('digest', $data ?? [], null);
         
-        $this->setIfExists('enable', $data ?? [], 1);
+        $this->setIfExists('enable', $data ?? [], true);
         
         $this->setIfExists('log_level_forward', $data ?? [], PdmLogLevelInEnum::NOLOG);
         
@@ -383,11 +383,11 @@ class PveRemotesUpdatePveRemotesByRemoteNodesByNodeFirewallOptionsRequest implem
         
         $this->setIfExists('log_level_out', $data ?? [], PdmLogLevelInEnum::NOLOG);
         
-        $this->setIfExists('log_nf_conntrack', $data ?? [], 0);
+        $this->setIfExists('log_nf_conntrack', $data ?? [], false);
         
-        $this->setIfExists('ndp', $data ?? [], 1);
+        $this->setIfExists('ndp', $data ?? [], true);
         
-        $this->setIfExists('nf_conntrack_allow_invalid', $data ?? [], 0);
+        $this->setIfExists('nf_conntrack_allow_invalid', $data ?? [], false);
         
         $this->setIfExists('nf_conntrack_helpers', $data ?? [], null);
         
@@ -397,11 +397,11 @@ class PveRemotesUpdatePveRemotesByRemoteNodesByNodeFirewallOptionsRequest implem
         
         $this->setIfExists('nf_conntrack_tcp_timeout_syn_recv', $data ?? [], 60);
         
-        $this->setIfExists('nftables', $data ?? [], 0);
+        $this->setIfExists('nftables', $data ?? [], false);
         
-        $this->setIfExists('nosmurfs', $data ?? [], 0);
+        $this->setIfExists('nosmurfs', $data ?? [], false);
         
-        $this->setIfExists('protection_synflood', $data ?? [], 0);
+        $this->setIfExists('protection_synflood', $data ?? [], false);
         
         $this->setIfExists('protection_synflood_burst', $data ?? [], 1000);
         
@@ -411,7 +411,7 @@ class PveRemotesUpdatePveRemotesByRemoteNodesByNodeFirewallOptionsRequest implem
         
         $this->setIfExists('tcp_flags_log_level', $data ?? [], PdmLogLevelInEnum::NOLOG);
         
-        $this->setIfExists('tcpflags', $data ?? [], 0);
+        $this->setIfExists('tcpflags', $data ?? [], false);
         
 
     }

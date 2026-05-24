@@ -317,7 +317,7 @@ class PveRemotesGetClusterStatusResponseDataInner implements ModelInterface, Arr
         
         $this->setIfExists('level', $data ?? [], null);
         
-        $this->setIfExists('local', $data ?? [], 0);
+        $this->setIfExists('local', $data ?? [], false);
         
         $this->setIfExists('name', $data ?? [], null);
         
@@ -325,9 +325,9 @@ class PveRemotesGetClusterStatusResponseDataInner implements ModelInterface, Arr
         
         $this->setIfExists('nodes', $data ?? [], null);
         
-        $this->setIfExists('online', $data ?? [], 0);
+        $this->setIfExists('online', $data ?? [], false);
         
-        $this->setIfExists('quorate', $data ?? [], 0);
+        $this->setIfExists('quorate', $data ?? [], false);
         
         $this->setIfExists('type', $data ?? [], null);
         

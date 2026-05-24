@@ -533,13 +533,13 @@ class PveRemotesGetNetworkResponseDataInner implements ModelInterface, ArrayAcce
     public function __construct(?array $data = null)
     {
         
-        $this->setIfExists('active', $data ?? [], 0);
+        $this->setIfExists('active', $data ?? [], false);
         
         $this->setIfExists('address', $data ?? [], null);
         
         $this->setIfExists('address6', $data ?? [], null);
         
-        $this->setIfExists('autostart', $data ?? [], 0);
+        $this->setIfExists('autostart', $data ?? [], false);
         
         $this->setIfExists('bond_primary', $data ?? [], null);
         
@@ -549,19 +549,19 @@ class PveRemotesGetNetworkResponseDataInner implements ModelInterface, ArrayAcce
         
         $this->setIfExists('bridge_access', $data ?? [], null);
         
-        $this->setIfExists('bridge_arp_nd_suppress', $data ?? [], 0);
+        $this->setIfExists('bridge_arp_nd_suppress', $data ?? [], false);
         
-        $this->setIfExists('bridge_learning', $data ?? [], 0);
+        $this->setIfExists('bridge_learning', $data ?? [], false);
         
-        $this->setIfExists('bridge_multicast_flood', $data ?? [], 0);
+        $this->setIfExists('bridge_multicast_flood', $data ?? [], false);
         
-        $this->setIfExists('bridge_unicast_flood', $data ?? [], 0);
+        $this->setIfExists('bridge_unicast_flood', $data ?? [], false);
         
         $this->setIfExists('bridge_ports', $data ?? [], null);
         
         $this->setIfExists('bridge_vids', $data ?? [], null);
         
-        $this->setIfExists('bridge_vlan_aware', $data ?? [], 0);
+        $this->setIfExists('bridge_vlan_aware', $data ?? [], false);
         
         $this->setIfExists('cidr', $data ?? [], null);
         
@@ -571,7 +571,7 @@ class PveRemotesGetNetworkResponseDataInner implements ModelInterface, ArrayAcce
         
         $this->setIfExists('comments6', $data ?? [], null);
         
-        $this->setIfExists('exists', $data ?? [], 0);
+        $this->setIfExists('exists', $data ?? [], false);
         
         $this->setIfExists('families', $data ?? [], null);
         

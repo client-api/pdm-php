@@ -308,9 +308,9 @@ class SdnGetControllersResponseDataInnerPending implements ModelInterface, Array
         
         $this->setIfExists('asn', $data ?? [], null);
         
-        $this->setIfExists('bgp_multipath_as_relax', $data ?? [], 0);
+        $this->setIfExists('bgp_multipath_as_relax', $data ?? [], false);
         
-        $this->setIfExists('ebgp', $data ?? [], 0);
+        $this->setIfExists('ebgp', $data ?? [], false);
         
         $this->setIfExists('ebgp_multihop', $data ?? [], null);
         

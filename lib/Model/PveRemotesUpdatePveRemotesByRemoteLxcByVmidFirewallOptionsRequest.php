@@ -325,21 +325,21 @@ class PveRemotesUpdatePveRemotesByRemoteLxcByVmidFirewallOptionsRequest implemen
         
         $this->setIfExists('delete', $data ?? [], null);
         
-        $this->setIfExists('dhcp', $data ?? [], 0);
+        $this->setIfExists('dhcp', $data ?? [], false);
         
         $this->setIfExists('digest', $data ?? [], null);
         
-        $this->setIfExists('enable', $data ?? [], 0);
+        $this->setIfExists('enable', $data ?? [], false);
         
-        $this->setIfExists('ipfilter', $data ?? [], 0);
+        $this->setIfExists('ipfilter', $data ?? [], false);
         
         $this->setIfExists('log_level_in', $data ?? [], PdmLogLevelInEnum::NOLOG);
         
         $this->setIfExists('log_level_out', $data ?? [], PdmLogLevelInEnum::NOLOG);
         
-        $this->setIfExists('macfilter', $data ?? [], 1);
+        $this->setIfExists('macfilter', $data ?? [], true);
         
-        $this->setIfExists('ndp', $data ?? [], 1);
+        $this->setIfExists('ndp', $data ?? [], true);
         
         $this->setIfExists('node', $data ?? [], null);
         
@@ -347,7 +347,7 @@ class PveRemotesUpdatePveRemotesByRemoteLxcByVmidFirewallOptionsRequest implemen
         
         $this->setIfExists('policy_out', $data ?? [], null);
         
-        $this->setIfExists('radv', $data ?? [], 0);
+        $this->setIfExists('radv', $data ?? [], false);
         
 
     }

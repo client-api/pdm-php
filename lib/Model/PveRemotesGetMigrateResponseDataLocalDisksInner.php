@@ -269,9 +269,9 @@ class PveRemotesGetMigrateResponseDataLocalDisksInner implements ModelInterface,
     public function __construct(?array $data = null)
     {
         
-        $this->setIfExists('cdrom', $data ?? [], 0);
+        $this->setIfExists('cdrom', $data ?? [], false);
         
-        $this->setIfExists('is_unused', $data ?? [], 0);
+        $this->setIfExists('is_unused', $data ?? [], false);
         
         $this->setIfExists('size', $data ?? [], null);
         

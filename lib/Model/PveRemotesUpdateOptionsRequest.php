@@ -297,7 +297,7 @@ class PveRemotesUpdateOptionsRequest implements ModelInterface, ArrayAccess, \Js
         
         $this->setIfExists('digest', $data ?? [], null);
         
-        $this->setIfExists('ebtables', $data ?? [], 1);
+        $this->setIfExists('ebtables', $data ?? [], true);
         
         $this->setIfExists('enable', $data ?? [], 0);
         

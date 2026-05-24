@@ -134,8 +134,8 @@ class AccessAclApi
      *
      * Get ACL entries, can be filter by path
      *
-     * @param  bool|null $all_for_authid Whether to return all ACL entries for the exact current authid only. All ACL entries will appear as &#x60;AclUgidType::User&#x60; ACLs, regardles of whether they are stored as user or group entries. Hence, when using this parameter this endpoint cannot be used to retrieve information for updating the ACL tree directly. (optional, default to 0)
-     * @param  bool|null $exact If set, returns only ACL for the exact path. (optional, default to 0)
+     * @param  bool|null $all_for_authid Whether to return all ACL entries for the exact current authid only. All ACL entries will appear as &#x60;AclUgidType::User&#x60; ACLs, regardles of whether they are stored as user or group entries. Hence, when using this parameter this endpoint cannot be used to retrieve information for updating the ACL tree directly. (optional, default to false)
+     * @param  bool|null $exact If set, returns only ACL for the exact path. (optional, default to false)
      * @param  string|null $path Access control path. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accessAclGetAcl'] to see the possible values for this operation
      *
@@ -143,7 +143,7 @@ class AccessAclApi
      * @throws \InvalidArgumentException
      * @return \ClientApi\Pdm\Model\AccessAclGetAclResponse|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError
      */
-    public function accessAclGetAcl($all_for_authid = 0, $exact = 0, $path = null, string $contentType = self::contentTypes['accessAclGetAcl'][0])
+    public function accessAclGetAcl($all_for_authid = false, $exact = false, $path = null, string $contentType = self::contentTypes['accessAclGetAcl'][0])
     {
         list($response) = $this->accessAclGetAclWithHttpInfo($all_for_authid, $exact, $path, $contentType);
         return $response;
@@ -154,8 +154,8 @@ class AccessAclApi
      *
      * Get ACL entries, can be filter by path
      *
-     * @param  bool|null $all_for_authid Whether to return all ACL entries for the exact current authid only. All ACL entries will appear as &#x60;AclUgidType::User&#x60; ACLs, regardles of whether they are stored as user or group entries. Hence, when using this parameter this endpoint cannot be used to retrieve information for updating the ACL tree directly. (optional, default to 0)
-     * @param  bool|null $exact If set, returns only ACL for the exact path. (optional, default to 0)
+     * @param  bool|null $all_for_authid Whether to return all ACL entries for the exact current authid only. All ACL entries will appear as &#x60;AclUgidType::User&#x60; ACLs, regardles of whether they are stored as user or group entries. Hence, when using this parameter this endpoint cannot be used to retrieve information for updating the ACL tree directly. (optional, default to false)
+     * @param  bool|null $exact If set, returns only ACL for the exact path. (optional, default to false)
      * @param  string|null $path Access control path. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accessAclGetAcl'] to see the possible values for this operation
      *
@@ -163,7 +163,7 @@ class AccessAclApi
      * @throws \InvalidArgumentException
      * @return array of \ClientApi\Pdm\Model\AccessAclGetAclResponse|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function accessAclGetAclWithHttpInfo($all_for_authid = 0, $exact = 0, $path = null, string $contentType = self::contentTypes['accessAclGetAcl'][0])
+    public function accessAclGetAclWithHttpInfo($all_for_authid = false, $exact = false, $path = null, string $contentType = self::contentTypes['accessAclGetAcl'][0])
     {
         $request = $this->accessAclGetAclRequest($all_for_authid, $exact, $path, $contentType);
 
@@ -339,15 +339,15 @@ class AccessAclApi
      *
      * Get ACL entries, can be filter by path
      *
-     * @param  bool|null $all_for_authid Whether to return all ACL entries for the exact current authid only. All ACL entries will appear as &#x60;AclUgidType::User&#x60; ACLs, regardles of whether they are stored as user or group entries. Hence, when using this parameter this endpoint cannot be used to retrieve information for updating the ACL tree directly. (optional, default to 0)
-     * @param  bool|null $exact If set, returns only ACL for the exact path. (optional, default to 0)
+     * @param  bool|null $all_for_authid Whether to return all ACL entries for the exact current authid only. All ACL entries will appear as &#x60;AclUgidType::User&#x60; ACLs, regardles of whether they are stored as user or group entries. Hence, when using this parameter this endpoint cannot be used to retrieve information for updating the ACL tree directly. (optional, default to false)
+     * @param  bool|null $exact If set, returns only ACL for the exact path. (optional, default to false)
      * @param  string|null $path Access control path. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accessAclGetAcl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function accessAclGetAclAsync($all_for_authid = 0, $exact = 0, $path = null, string $contentType = self::contentTypes['accessAclGetAcl'][0])
+    public function accessAclGetAclAsync($all_for_authid = false, $exact = false, $path = null, string $contentType = self::contentTypes['accessAclGetAcl'][0])
     {
         return $this->accessAclGetAclAsyncWithHttpInfo($all_for_authid, $exact, $path, $contentType)
             ->then(
@@ -362,15 +362,15 @@ class AccessAclApi
      *
      * Get ACL entries, can be filter by path
      *
-     * @param  bool|null $all_for_authid Whether to return all ACL entries for the exact current authid only. All ACL entries will appear as &#x60;AclUgidType::User&#x60; ACLs, regardles of whether they are stored as user or group entries. Hence, when using this parameter this endpoint cannot be used to retrieve information for updating the ACL tree directly. (optional, default to 0)
-     * @param  bool|null $exact If set, returns only ACL for the exact path. (optional, default to 0)
+     * @param  bool|null $all_for_authid Whether to return all ACL entries for the exact current authid only. All ACL entries will appear as &#x60;AclUgidType::User&#x60; ACLs, regardles of whether they are stored as user or group entries. Hence, when using this parameter this endpoint cannot be used to retrieve information for updating the ACL tree directly. (optional, default to false)
+     * @param  bool|null $exact If set, returns only ACL for the exact path. (optional, default to false)
      * @param  string|null $path Access control path. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accessAclGetAcl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function accessAclGetAclAsyncWithHttpInfo($all_for_authid = 0, $exact = 0, $path = null, string $contentType = self::contentTypes['accessAclGetAcl'][0])
+    public function accessAclGetAclAsyncWithHttpInfo($all_for_authid = false, $exact = false, $path = null, string $contentType = self::contentTypes['accessAclGetAcl'][0])
     {
         $returnType = '\ClientApi\Pdm\Model\AccessAclGetAclResponse';
         $request = $this->accessAclGetAclRequest($all_for_authid, $exact, $path, $contentType);
@@ -414,15 +414,15 @@ class AccessAclApi
     /**
      * Create request for operation 'accessAclGetAcl'
      *
-     * @param  bool|null $all_for_authid Whether to return all ACL entries for the exact current authid only. All ACL entries will appear as &#x60;AclUgidType::User&#x60; ACLs, regardles of whether they are stored as user or group entries. Hence, when using this parameter this endpoint cannot be used to retrieve information for updating the ACL tree directly. (optional, default to 0)
-     * @param  bool|null $exact If set, returns only ACL for the exact path. (optional, default to 0)
+     * @param  bool|null $all_for_authid Whether to return all ACL entries for the exact current authid only. All ACL entries will appear as &#x60;AclUgidType::User&#x60; ACLs, regardles of whether they are stored as user or group entries. Hence, when using this parameter this endpoint cannot be used to retrieve information for updating the ACL tree directly. (optional, default to false)
+     * @param  bool|null $exact If set, returns only ACL for the exact path. (optional, default to false)
      * @param  string|null $path Access control path. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['accessAclGetAcl'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function accessAclGetAclRequest($all_for_authid = 0, $exact = 0, $path = null, string $contentType = self::contentTypes['accessAclGetAcl'][0])
+    public function accessAclGetAclRequest($all_for_authid = false, $exact = false, $path = null, string $contentType = self::contentTypes['accessAclGetAcl'][0])
     {
 
 

@@ -2650,7 +2650,7 @@ class PbsRemotesApi
      *
      * @param  string $remote Remote ID. (required)
      * @param  string $upid A remote UPID (required)
-     * @param  bool|null $download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to 0)
+     * @param  bool|null $download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to false)
      * @param  int|null $limit The amount of lines to read from the tasklog. Setting this parameter to 0 will return all lines until the end of the file. (optional, default to 50)
      * @param  int|null $start Start at this line when reading the tasklog (optional, default to 0)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pbsRemotesGetLog'] to see the possible values for this operation
@@ -2659,7 +2659,7 @@ class PbsRemotesApi
      * @throws \InvalidArgumentException
      * @return \ClientApi\Pdm\Model\PbsRemotesGetLogResponse|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError
      */
-    public function pbsRemotesGetLog($remote, $upid, $download = 0, $limit = 50, $start = 0, string $contentType = self::contentTypes['pbsRemotesGetLog'][0])
+    public function pbsRemotesGetLog($remote, $upid, $download = false, $limit = 50, $start = 0, string $contentType = self::contentTypes['pbsRemotesGetLog'][0])
     {
         list($response) = $this->pbsRemotesGetLogWithHttpInfo($remote, $upid, $download, $limit, $start, $contentType);
         return $response;
@@ -2672,7 +2672,7 @@ class PbsRemotesApi
      *
      * @param  string $remote Remote ID. (required)
      * @param  string $upid A remote UPID (required)
-     * @param  bool|null $download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to 0)
+     * @param  bool|null $download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to false)
      * @param  int|null $limit The amount of lines to read from the tasklog. Setting this parameter to 0 will return all lines until the end of the file. (optional, default to 50)
      * @param  int|null $start Start at this line when reading the tasklog (optional, default to 0)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pbsRemotesGetLog'] to see the possible values for this operation
@@ -2681,7 +2681,7 @@ class PbsRemotesApi
      * @throws \InvalidArgumentException
      * @return array of \ClientApi\Pdm\Model\PbsRemotesGetLogResponse|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function pbsRemotesGetLogWithHttpInfo($remote, $upid, $download = 0, $limit = 50, $start = 0, string $contentType = self::contentTypes['pbsRemotesGetLog'][0])
+    public function pbsRemotesGetLogWithHttpInfo($remote, $upid, $download = false, $limit = 50, $start = 0, string $contentType = self::contentTypes['pbsRemotesGetLog'][0])
     {
         $request = $this->pbsRemotesGetLogRequest($remote, $upid, $download, $limit, $start, $contentType);
 
@@ -2859,7 +2859,7 @@ class PbsRemotesApi
      *
      * @param  string $remote Remote ID. (required)
      * @param  string $upid A remote UPID (required)
-     * @param  bool|null $download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to 0)
+     * @param  bool|null $download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to false)
      * @param  int|null $limit The amount of lines to read from the tasklog. Setting this parameter to 0 will return all lines until the end of the file. (optional, default to 50)
      * @param  int|null $start Start at this line when reading the tasklog (optional, default to 0)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pbsRemotesGetLog'] to see the possible values for this operation
@@ -2867,7 +2867,7 @@ class PbsRemotesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function pbsRemotesGetLogAsync($remote, $upid, $download = 0, $limit = 50, $start = 0, string $contentType = self::contentTypes['pbsRemotesGetLog'][0])
+    public function pbsRemotesGetLogAsync($remote, $upid, $download = false, $limit = 50, $start = 0, string $contentType = self::contentTypes['pbsRemotesGetLog'][0])
     {
         return $this->pbsRemotesGetLogAsyncWithHttpInfo($remote, $upid, $download, $limit, $start, $contentType)
             ->then(
@@ -2884,7 +2884,7 @@ class PbsRemotesApi
      *
      * @param  string $remote Remote ID. (required)
      * @param  string $upid A remote UPID (required)
-     * @param  bool|null $download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to 0)
+     * @param  bool|null $download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to false)
      * @param  int|null $limit The amount of lines to read from the tasklog. Setting this parameter to 0 will return all lines until the end of the file. (optional, default to 50)
      * @param  int|null $start Start at this line when reading the tasklog (optional, default to 0)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pbsRemotesGetLog'] to see the possible values for this operation
@@ -2892,7 +2892,7 @@ class PbsRemotesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function pbsRemotesGetLogAsyncWithHttpInfo($remote, $upid, $download = 0, $limit = 50, $start = 0, string $contentType = self::contentTypes['pbsRemotesGetLog'][0])
+    public function pbsRemotesGetLogAsyncWithHttpInfo($remote, $upid, $download = false, $limit = 50, $start = 0, string $contentType = self::contentTypes['pbsRemotesGetLog'][0])
     {
         $returnType = '\ClientApi\Pdm\Model\PbsRemotesGetLogResponse';
         $request = $this->pbsRemotesGetLogRequest($remote, $upid, $download, $limit, $start, $contentType);
@@ -2938,7 +2938,7 @@ class PbsRemotesApi
      *
      * @param  string $remote Remote ID. (required)
      * @param  string $upid A remote UPID (required)
-     * @param  bool|null $download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to 0)
+     * @param  bool|null $download Whether the tasklog file should be downloaded. This parameter can&#39;t be used in conjunction with other parameters (optional, default to false)
      * @param  int|null $limit The amount of lines to read from the tasklog. Setting this parameter to 0 will return all lines until the end of the file. (optional, default to 50)
      * @param  int|null $start Start at this line when reading the tasklog (optional, default to 0)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pbsRemotesGetLog'] to see the possible values for this operation
@@ -2946,7 +2946,7 @@ class PbsRemotesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function pbsRemotesGetLogRequest($remote, $upid, $download = 0, $limit = 50, $start = 0, string $contentType = self::contentTypes['pbsRemotesGetLog'][0])
+    public function pbsRemotesGetLogRequest($remote, $upid, $download = false, $limit = 50, $start = 0, string $contentType = self::contentTypes['pbsRemotesGetLog'][0])
     {
 
         // verify the required parameter 'remote' is set
@@ -5544,14 +5544,14 @@ class PbsRemotesApi
      *
      * @param  string $remote Remote ID. (required)
      * @param  string $upid A remote UPID (required)
-     * @param  bool|null $wait wait for the task to finish before returning its result (optional, default to 0)
+     * @param  bool|null $wait wait for the task to finish before returning its result (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatus'] to see the possible values for this operation
      *
      * @throws \ClientApi\Pdm\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \ClientApi\Pdm\Model\PbsRemotesGetPbsRemotesByRemoteTasksByUpidStatusResponse|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError
      */
-    public function pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatus($remote, $upid, $wait = 0, string $contentType = self::contentTypes['pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatus'][0])
+    public function pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatus($remote, $upid, $wait = false, string $contentType = self::contentTypes['pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatus'][0])
     {
         list($response) = $this->pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatusWithHttpInfo($remote, $upid, $wait, $contentType);
         return $response;
@@ -5564,14 +5564,14 @@ class PbsRemotesApi
      *
      * @param  string $remote Remote ID. (required)
      * @param  string $upid A remote UPID (required)
-     * @param  bool|null $wait wait for the task to finish before returning its result (optional, default to 0)
+     * @param  bool|null $wait wait for the task to finish before returning its result (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatus'] to see the possible values for this operation
      *
      * @throws \ClientApi\Pdm\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \ClientApi\Pdm\Model\PbsRemotesGetPbsRemotesByRemoteTasksByUpidStatusResponse|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError|\ClientApi\Pdm\Model\PdmError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatusWithHttpInfo($remote, $upid, $wait = 0, string $contentType = self::contentTypes['pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatus'][0])
+    public function pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatusWithHttpInfo($remote, $upid, $wait = false, string $contentType = self::contentTypes['pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatus'][0])
     {
         $request = $this->pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatusRequest($remote, $upid, $wait, $contentType);
 
@@ -5749,13 +5749,13 @@ class PbsRemotesApi
      *
      * @param  string $remote Remote ID. (required)
      * @param  string $upid A remote UPID (required)
-     * @param  bool|null $wait wait for the task to finish before returning its result (optional, default to 0)
+     * @param  bool|null $wait wait for the task to finish before returning its result (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatusAsync($remote, $upid, $wait = 0, string $contentType = self::contentTypes['pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatus'][0])
+    public function pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatusAsync($remote, $upid, $wait = false, string $contentType = self::contentTypes['pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatus'][0])
     {
         return $this->pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatusAsyncWithHttpInfo($remote, $upid, $wait, $contentType)
             ->then(
@@ -5772,13 +5772,13 @@ class PbsRemotesApi
      *
      * @param  string $remote Remote ID. (required)
      * @param  string $upid A remote UPID (required)
-     * @param  bool|null $wait wait for the task to finish before returning its result (optional, default to 0)
+     * @param  bool|null $wait wait for the task to finish before returning its result (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatusAsyncWithHttpInfo($remote, $upid, $wait = 0, string $contentType = self::contentTypes['pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatus'][0])
+    public function pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatusAsyncWithHttpInfo($remote, $upid, $wait = false, string $contentType = self::contentTypes['pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatus'][0])
     {
         $returnType = '\ClientApi\Pdm\Model\PbsRemotesGetPbsRemotesByRemoteTasksByUpidStatusResponse';
         $request = $this->pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatusRequest($remote, $upid, $wait, $contentType);
@@ -5824,13 +5824,13 @@ class PbsRemotesApi
      *
      * @param  string $remote Remote ID. (required)
      * @param  string $upid A remote UPID (required)
-     * @param  bool|null $wait wait for the task to finish before returning its result (optional, default to 0)
+     * @param  bool|null $wait wait for the task to finish before returning its result (optional, default to false)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatus'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatusRequest($remote, $upid, $wait = 0, string $contentType = self::contentTypes['pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatus'][0])
+    public function pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatusRequest($remote, $upid, $wait = false, string $contentType = self::contentTypes['pbsRemotesGetPbsRemotesByRemoteTasksByUpidStatus'][0])
     {
 
         // verify the required parameter 'remote' is set

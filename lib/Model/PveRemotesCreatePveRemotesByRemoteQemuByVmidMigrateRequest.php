@@ -301,7 +301,7 @@ class PveRemotesCreatePveRemotesByRemoteQemuByVmidMigrateRequest implements Mode
         
         $this->setIfExists('bwlimit', $data ?? [], null);
         
-        $this->setIfExists('force', $data ?? [], 0);
+        $this->setIfExists('force', $data ?? [], false);
         
         $this->setIfExists('migration_network', $data ?? [], null);
         
